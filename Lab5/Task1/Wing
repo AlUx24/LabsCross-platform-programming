@@ -1,0 +1,31 @@
+import java.util.Objects;
+
+public class Wing {
+    private double length;
+
+    public Wing(double length) {
+        this.length = length;
+    }
+
+    public double getLength() { return length; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Wing)) return false;
+        Wing wing = (Wing) o;
+        return Double.compare(wing.length, length) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(length);
+    }
+
+    @Override
+    public String toString() {
+        return "Wing{" +
+                "length=" + length +
+                '}';
+    }
+}
