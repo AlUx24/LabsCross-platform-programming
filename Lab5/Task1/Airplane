@@ -1,0 +1,55 @@
+import java.util.Objects;
+
+public class Airplane {
+    private String model;
+    private Wing wing;
+    private LandingGear landingGear;
+    private Engine engine;
+    private String route; // маршрут
+
+    public Airplane(String model, Wing wing, LandingGear landingGear, Engine engine) {
+        this.model = model;
+        this.wing = wing;
+        this.landingGear = landingGear;
+        this.engine = engine;
+    }
+
+    public void fly() {
+        System.out.println(model + " летить по маршруту: " + route);
+    }
+
+    public void setRoute(String route) {
+        this.route = route;
+    }
+
+    public void printRoute() {
+        System.out.println("Маршрут літака: " + route);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Airplane)) return false;
+        Airplane airplane = (Airplane) o;
+        return Objects.equals(model, airplane.model) &&
+                Objects.equals(wing, airplane.wing) &&
+                Objects.equals(landingGear, airplane.landingGear) &&
+                Objects.equals(engine, airplane.engine);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(model, wing, landingGear, engine);
+    }
+
+    @Override
+    public String toString() {
+        return "Airplane{" +
+                "model='" + model + '\'' +
+                ", wing=" + wing +
+                ", landingGear=" + landingGear +
+                ", engine=" + engine +
+                ", route='" + route + '\'' +
+                '}';
+    }
+}
