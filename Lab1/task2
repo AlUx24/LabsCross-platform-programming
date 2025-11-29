@@ -1,0 +1,15 @@
+public class ExpressionCalculator {
+    public static void main(String[] args) {
+        double m = 2;
+        double c = -1;
+        double t = 1.2;
+        double b = 0.7;
+
+        double f = 3 * m * Math.tan(t) + c * Math.sin(t);
+
+        double z = m * Math.cos(b * t * Math.sin(t)) + c;
+
+        System.out.println("Значення f: " + f);
+        System.out.println("Значення z: " + z);
+    }
+}
