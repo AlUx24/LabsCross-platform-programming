@@ -1,0 +1,14 @@
+package com.home.devices.model;
+
+public class CleaningAppliance extends Appliance {
+
+    public CleaningAppliance(String name, int power) {
+        super(name, power);
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println("Cleaning appliance: " + getName() +
+                ", power = " + getPower() + "W, plugged in = " + isPluggedIn());
+    }
+}
