@@ -1,0 +1,75 @@
+public class Phone {
+    private int id;
+    private String lastName;
+    private String firstName;
+    private String patronymic;
+    private String address;
+    private String creditCardNumber;
+    private double debit;
+    private double credit;
+    private int cityCallTime;       // час міських розмов (у хвилинах)
+    private int longDistanceTime;   // час міжміських розмов (у хвилинах)
+
+    public Phone(int id, String lastName, String firstName, String patronymic,
+                 String address, String creditCardNumber, double debit, double credit,
+                 int cityCallTime, int longDistanceTime) {
+        this.id = id;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.patronymic = patronymic;
+        this.address = address;
+        this.creditCardNumber = creditCardNumber;
+        this.debit = debit;
+        this.credit = credit;
+        this.cityCallTime = cityCallTime;
+        this.longDistanceTime = longDistanceTime;
+    }
+
+    // --- GETTERS & SETTERS ---
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getPatronymic() { return patronymic; }
+    public void setPatronymic(String patronymic) { this.patronymic = patronymic; }
+
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
+
+    public String getCreditCardNumber() { return creditCardNumber; }
+    public void setCreditCardNumber(String creditCardNumber) { this.creditCardNumber = creditCardNumber; }
+
+    public double getDebit() { return debit; }
+    public void setDebit(double debit) { this.debit = debit; }
+
+    public double getCredit() { return credit; }
+    public void setCredit(double credit) { this.credit = credit; }
+
+    public int getCityCallTime() { return cityCallTime; }
+    public void setCityCallTime(int cityCallTime) { this.cityCallTime = cityCallTime; }
+
+    public int getLongDistanceTime() { return longDistanceTime; }
+    public void setLongDistanceTime(int longDistanceTime) { this.longDistanceTime = longDistanceTime; }
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "id=" + id +
+                ", Прізвище='" + lastName + '\'' +
+                ", Ім'я='" + firstName + '\'' +
+                ", По батькові='" + patronymic + '\'' +
+                ", Адреса='" + address + '\'' +
+                ", Кредитна картка='" + creditCardNumber + '\'' +
+                ", Дебет=" + debit +
+                ", Кредит=" + credit +
+                ", Міські розмови=" + cityCallTime +
+                ", Міжміські розмови=" + longDistanceTime +
+                '}';
+    }
+}
