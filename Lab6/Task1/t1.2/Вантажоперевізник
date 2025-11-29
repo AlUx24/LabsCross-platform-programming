@@ -1,0 +1,30 @@
+public abstract class Carrier {
+    private String name;
+    private int capacity;         // вантажопідйомність (умовні одиниці)
+    private double pricePerUnit;  // ціна за 1 одиницю вантажу
+
+    public Carrier(String name, int capacity, double pricePerUnit) {
+        this.name = name;
+        this.capacity = capacity;
+        this.pricePerUnit = pricePerUnit;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public double getPricePerUnit() {
+        return pricePerUnit;
+    }
+
+    // Поліморфний метод
+    public double calculateTripCost() {
+        return capacity * pricePerUnit;
+    }
+
+    public abstract void showInfo();
+}
