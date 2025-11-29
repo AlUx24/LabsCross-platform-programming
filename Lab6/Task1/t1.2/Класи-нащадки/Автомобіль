@@ -1,0 +1,14 @@
+public class Truck extends Carrier {
+
+    public Truck(String name, int capacity, double pricePerUnit) {
+        super(name, capacity, pricePerUnit);
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println("Truck: " + getName() +
+                ", capacity=" + getCapacity() +
+                ", price/unit=" + getPricePerUnit() +
+                ", trip cost=" + calculateTripCost());
+    }
+}
