@@ -1,0 +1,50 @@
+import java.util.List;
+
+
+public class Abiturient {
+private int id;
+private String lastName;
+private String firstName;
+private String middleName;
+private String address;
+private String phone;
+private List<Integer> grades; // оцiнки
+
+
+public Abiturient(int id, String lastName, String firstName, String middleName,
+String address, String phone, List<Integer> grades) {
+this.id = id;
+this.lastName = lastName;
+this.firstName = firstName;
+this.middleName = middleName;
+this.address = address;
+this.phone = phone;
+this.grades = grades;
+}
+
+
+public int getId() { return id; }
+public String getLastName() { return lastName; }
+public String getFirstName() { return firstName; }
+public String getMiddleName() { return middleName; }
+public String getAddress() { return address; }
+public String getPhone() { return phone; }
+public List<Integer> getGrades() { return grades; }
+
+
+public double getAverage() {
+return grades.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+}
+
+
+public boolean hasFailing() {
+return grades.stream().anyMatch(g -> g < 4); // припустимо, 1-3 — незадовільно
+}
+
+
+@Override
+public String toString() {
+return String.format("%d: %s %s %s, ср.бал=%.2f, оцінки=%s",
+id, lastName, firstName, middleName, getAverage(), grades);
+}
+}
