@@ -1,0 +1,36 @@
+package com.home.devices.model;
+
+public abstract class Appliance {
+    private String name;
+    private int power;          // Потужність (Вт)
+    private boolean pluggedIn;  // Чи включений у розетку
+
+    public Appliance(String name, int power) {
+        this.name = name;
+        this.power = power;
+        this.pluggedIn = false;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public boolean isPluggedIn() {
+        return pluggedIn;
+    }
+
+    public void plugIn() {
+        pluggedIn = true;
+    }
+
+    public void plugOut() {
+        pluggedIn = false;
+    }
+
+    // Поліморфізм: різні прилади по-своєму виводять інформацію
+    public abstract void showInfo();
+}
