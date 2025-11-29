@@ -1,0 +1,4 @@
+public interface LearningInstitution {
+    void showInfo();
+    int getStudentsCount();
+}
