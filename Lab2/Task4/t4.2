@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class AthleteRunCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Введіть початковий пробіг x (км):");
+        double x = scanner.nextDouble();
+        
+        System.out.println("Введіть цільовий пробіг y (км):");
+        double y = scanner.nextDouble();
+        
+        scanner.close();
+        
+        int days = 1;
+        double currentRun = x;
+
+        while (currentRun < y) {
+            currentRun = currentRun * 1.1; 
+            days++; 
+        }
+        
+        System.out.println(days);
+    }
+}
