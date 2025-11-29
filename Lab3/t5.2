@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class RangePrinter {
+
+    public static void printForward(int start, int end) {
+        if (start <= end) {
+            System.out.print(start + " ");
+            printForward(start + 1, end);
+        }
+    }
+
+    public static void printReverse(int start, int end) {
+        if (start <= end) {
+            printReverse(start + 1, end);
+            System.out.print(start + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введіть початкове число діапазону:");
+        int start = scanner.nextInt();
+        System.out.println("Введіть кінцеве число діапазону:");
+        int end = scanner.nextInt();
+        scanner.close();
+
+        System.out.println("\nПорядок: Прямий");
+        printForward(start, end);
+        System.out.println("\nПорядок: Зворотний");
+        printReverse(start, end);
+        System.out.println();
+    }
+}
