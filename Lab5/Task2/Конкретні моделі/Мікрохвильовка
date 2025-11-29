@@ -1,0 +1,8 @@
+package com.home.devices.model;
+
+public class Microwave extends KitchenAppliance {
+
+    public Microwave(String name, int power) {
+        super(name, power);
+    }
+}
