@@ -1,0 +1,12 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Carrier plane = new Plane("Boeing 747", 20000, 5.5);
+        Carrier train = new Train("Cargo Express", 50000, 3.2);
+        Carrier truck = new Truck("Volvo FH16", 12000, 4.0);
+
+        plane.showInfo();
+        train.showInfo();
+        truck.showInfo();
+    }
+}
