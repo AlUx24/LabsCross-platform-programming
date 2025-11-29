@@ -1,0 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Engine engine = new Engine("GE-90", 100000);
+        Wing wing = new Wing(23.5);
+        LandingGear gear = new LandingGear(6);
+
+        Airplane airplane = new Airplane("Boeing 777", wing, gear, engine);
+
+        airplane.setRoute("Київ → Варшава");
+        airplane.printRoute();
+        airplane.fly();
+
+        System.out.println(airplane);
+    }
+}
