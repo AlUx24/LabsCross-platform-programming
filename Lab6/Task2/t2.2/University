@@ -1,0 +1,20 @@
+public class University implements LearningInstitution {
+
+    private String name;
+    private int studentsCount;
+
+    public University(String name, int studentsCount) {
+        this.name = name;
+        this.studentsCount = studentsCount;
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println("University: " + name + ", students: " + studentsCount);
+    }
+
+    @Override
+    public int getStudentsCount() {
+        return studentsCount;
+    }
+}
