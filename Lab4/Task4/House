@@ -1,0 +1,45 @@
+public class House {
+private int id;
+private int apartmentNumber;
+private double area;
+private int floor;
+private int rooms;
+private String street;
+private String buildingType; // Тип будівлі
+private int serviceLife; // термін експлуатації (роки)
+
+
+public House(int id, int apartmentNumber, double area, int floor, int rooms,
+String street, String buildingType, int serviceLife) {
+this.id = id;
+this.apartmentNumber = apartmentNumber;
+this.area = area;
+this.floor = floor;
+this.rooms = rooms;
+this.street = street;
+this.buildingType = buildingType;
+this.serviceLife = serviceLife;
+}
+
+
+public int getId() { return id; }
+public int getApartmentNumber() { return apartmentNumber; }
+public double getArea() { return area; }
+public int getFloor() { return floor; }
+public int getRooms() { return rooms; }
+public String getStreet() { return street; }
+
+
+public String getType() { return buildingType; } // getТип
+public void setType(String buildingType) { this.buildingType = buildingType; } // setТип
+
+
+public int getServiceLife() { return serviceLife; }
+
+
+@Override
+public String toString() {
+return String.format("%d: кв.%d, %s, пл.=%.1f, пов.%d, кімн.%d, %s, термін=%d р.",
+id, apartmentNumber, street, area, floor, rooms, buildingType, serviceLife);
+}
+}
