@@ -1,0 +1,14 @@
+public class Train extends Carrier {
+
+    public Train(String name, int capacity, double pricePerUnit) {
+        super(name, capacity, pricePerUnit);
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println("Train: " + getName() +
+                ", capacity=" + getCapacity() +
+                ", price/unit=" + getPricePerUnit() +
+                ", trip cost=" + calculateTripCost());
+    }
+}
