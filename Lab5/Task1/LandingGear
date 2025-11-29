@@ -1,0 +1,31 @@
+import java.util.Objects;
+
+public class LandingGear {
+    private int wheelsCount;
+
+    public LandingGear(int wheelsCount) {
+        this.wheelsCount = wheelsCount;
+    }
+
+    public int getWheelsCount() { return wheelsCount; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LandingGear)) return false;
+        LandingGear that = (LandingGear) o;
+        return wheelsCount == that.wheelsCount;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(wheelsCount);
+    }
+
+    @Override
+    public String toString() {
+        return "LandingGear{" +
+                "wheelsCount=" + wheelsCount +
+                '}';
+    }
+}
