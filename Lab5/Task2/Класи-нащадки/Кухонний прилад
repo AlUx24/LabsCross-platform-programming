@@ -1,0 +1,14 @@
+package com.home.devices.model;
+
+public class KitchenAppliance extends Appliance {
+
+    public KitchenAppliance(String name, int power) {
+        super(name, power);
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println("Kitchen appliance: " + getName() +
+                ", power = " + getPower() + "W, plugged in = " + isPluggedIn());
+    }
+}
