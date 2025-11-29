@@ -1,0 +1,10 @@
+public class Main {
+    public static void main(String[] args) {
+
+        LearningInstitution college = new College("Tech College", 1200);
+        LearningInstitution university = new University("National University", 8500);
+
+        college.showInfo();
+        university.showInfo();
+    }
+}
