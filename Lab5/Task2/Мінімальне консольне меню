@@ -1,0 +1,78 @@
+package com.home.devices.menu;
+
+import com.home.devices.model.*;
+import com.home.devices.service.ApplianceService;
+import java.util.List;
+import java.util.Scanner;
+
+public class ConsoleMenu {
+
+    private ApplianceService service = new ApplianceService();
+    private Scanner scanner = new Scanner(System.in);
+
+    public void start() {
+        while (true) {
+            System.out.println("\n1 - Add microwave");
+            System.out.println("2 - Add vacuum cleaner");
+            System.out.println("3 - Plug in device");
+            System.out.println("4 - Show all");
+            System.out.println("5 - Total power");
+            System.out.println("6 - Sort by power");
+            System.out.println("7 - Find by power range");
+            System.out.println("0 - Exit");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1 -> addMicrowave();
+                case 2 -> addVacuum();
+                case 3 -> plugIn();
+                case 4 -> service.showAll();
+                case 5 -> System.out.println("Total power: " + service.getTotalPower() + "W");
+                case 6 -> service.sortByPower();
+                case 7 -> findByRange();
+                case 0 -> { return; }
+                default -> System.out.println("Wrong choice.");
+            }
+        }
+    }
+
+    private void addMicrowave() {
+        System.out.print("Name: ");
+        scanner.nextLine();
+        String name = scanner.nextLine();
+
+        System.out.print("Power (W): ");
+        int power = scanner.nextInt();
+
+        service.add(new Microwave(name, power));
+    }
+
+    private void addVacuum() {
+        System.out.print("Name: ");
+        scanner.nextLine();
+        String name = scanner.nextLine();
+
+        System.out.print("Power (W): ");
+        int power = scanner.nextInt();
+
+        service.add(new VacuumCleaner(name, power));
+    }
+
+    private void plugIn() {
+        System.out.print("Enter index: ");
+        int index = scanner.nextInt();
+        service.plugIn(index);
+    }
+
+    private void findByRange() {
+        System.out.print("Min power: ");
+        int min = scanner.nextInt();
+
+        System.out.print("Max power: ");
+        int max = scanner.nextInt();
+
+        List<Appliance> result = service.findByPowerRange(min, max);
+        result.forEach(Appliance::showInfo);
+    }
+}
