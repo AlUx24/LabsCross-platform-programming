@@ -1,0 +1,21 @@
+public class ProgrammerCounter {
+    public static void main(String[] args) {
+
+        int n = 102; 
+        String suffix;
+        int lastTwoDigits = n % 100;
+        int lastDigit = n % 10;
+        
+        if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+            suffix = "програмістів";
+        } else if (lastDigit == 1) {
+            suffix = "програміст";
+        } else if (lastDigit >= 2 && lastDigit <= 4) {
+            suffix = "програмісти";
+        } else {
+            suffix = "програмістів";
+        }
+
+        System.out.println(n + " " + suffix);
+    }
+}
