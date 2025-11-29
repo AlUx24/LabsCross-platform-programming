@@ -1,0 +1,13 @@
+src/
+ └── com.home.devices
+        ├── Main.java
+        ├── menu/
+        │       └── ConsoleMenu.java
+        ├── model/
+        │       ├── Appliance.java
+        │       ├── KitchenAppliance.java
+        │       ├── CleaningAppliance.java
+        │       ├── Microwave.java
+        │       └── VacuumCleaner.java
+        └── service/
+                └── ApplianceService.java
